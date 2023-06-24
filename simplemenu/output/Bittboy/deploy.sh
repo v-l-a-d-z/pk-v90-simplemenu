@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-cat_main_content=$(cat /mnt/apps/simplemenu/main.sh)
+#cat_main_content=$(cat /mnt/apps/simplemenu/main.sh)
 # Step 1: Create the ".simplemenu" folder
 if [ ! -d "/mnt/.simplemenu" ]; then
     mkdir /mnt/.simplemenu
