@@ -1,3 +1,3 @@
 #!/bin/sh
-cd /mnt/apps/SimpleMenu
+cd /mnt/apps/simplemenu
 ./simplemenu
