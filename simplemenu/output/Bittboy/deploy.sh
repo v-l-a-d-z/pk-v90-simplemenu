@@ -36,16 +36,13 @@ fi
 # Step 4: Autobooting simplemenu
 if [ -f "/etc/main" ]; then
     echo "Changing partition permissions on /"
-    cat /proc/mounts >> /mnt/apps/simplemenu/proc_mounts_a.log
     mount -o remount,rw,relatime,data=ordered /
-    cat /proc/mounts >> /mnt/apps/simplemenu/proc_mounts_b.log
     if [ -n "$cat_main_content" ]; then
            echo "$cat_main_content" > /etc/main
            echo "cat_main_content copied to /etc/main"
     fi
     echo "Changing partition permissions back on /"
     mount -o remount,ro,relatime,data=ordered /
-    cat /proc/mounts >> /mnt/apps/simplemenu/proc_mounts_c.log
     echo "Step 4 completed"
 fi
 
