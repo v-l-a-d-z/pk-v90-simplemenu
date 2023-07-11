@@ -2,12 +2,11 @@
 set -e
 echo "Welcome to Taichi's simplemenu deploy script! Initiating..."
 # Step 0: Copy main.sh to a variable for later use
-if [ ! -d "/mnt/apps/simplemenu/main.sh" ]; then
+if [ -f "/mnt/apps/simplemenu/main.sh" ]; then
     echo "Saving main.sh contents from /mnt/apps/simplemenu/"
     cat_main_content=$(cat /mnt/apps/simplemenu/main.sh)
     echo "Step 0 completed"
 fi
-
 # Step 1: Create the ".simplemenu" folder
 if [ ! -d "/mnt/.simplemenu" ]; then
     echo "Creating .simplemenu on /mnt/"
@@ -22,7 +21,7 @@ if [ -d "/mnt/apps/simplemenu" ]; then
     cp -r /mnt/apps/simplemenu/* /mnt/.simplemenu/
     echo "Removing redundant data from /mnt/.simplemenu/"
     rm -fr /mnt/.simplemenu/config/*
-    rm -fr /mnt/.simplemenu/deploy.sh /mnt/.simplemenu/main.sh
+    rm -fr /mnt/.simplemenu/deploy.sh /mnt/.simplemenu/main.sh /mnt/.simplemenu/clean_dot_files.sh
     echo "Step 2 completed"
 fi
 
