@@ -4,7 +4,7 @@ echo "Welcome to Taichi's simplemenu deploy script! Initiating..."
 
 # Preparation: clean 'main' partition - delete all macos dot files 
 echo "Deleting all macos dot files"
-find /mnt/ -name '._*' -exec rm -v {} \;
+find /mnt/ -name '._*' -exec rm -v {} &> /dev/null \;
 echo "Preparation completed"
 
 # Step 0: Copy main.sh to a variable for later use
